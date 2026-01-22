@@ -37,26 +37,6 @@
     },
     "modules": [
 	{
-            "name": "jansson",
-	    "buildsystem": "cmake",
-	    "config-opts": [
-		"-DJANSSON_BUILD_DOCS=OFF",
-		"-DJANSSON_EXAMPLES=OFF",
-		"-DCMAKE_BUILD_TYPE=Release",
-		"-DJANSSON_WITHOUT_TESTS=ON"
-	    ],
-            "sources": [
-                {
-		    "type": "git",
-                    "url": "https://github.com/akheron/jansson.git",
-		    "tag": "v2.14"
-                }
-            ],
-	    "cleanup": [
-		"*"
-	    ]
-        },
-	{
 	    "name": "treesitter",
 	    "buildsystem": "simple",
 	    "build-commands": [
@@ -189,7 +169,6 @@
                 "--with-gnutls",
 		"--with-tree-sitter",
 		"--with-modules",
-		"--with-json",
 		"--with-pgtk",
 		"--with-zlib",
 		"--with-native-compilation"

@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnu.emacs-pgtk",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "46",
+    "runtime-version" : "48",
     "sdk" : "org.gnome.Sdk",
     "command": "emacs",
     "rename-icon": "emacs",
@@ -39,15 +39,15 @@
 	{
 	    "name": "treesitter",
 	    "buildsystem": "simple",
-	    "build-commands": [
-		"make PREFIX=$FLATPAK_DEST -j $FLATPAK_BUILDER_N_JOBS",
-		"make install PREFIX=$FLATPAK_DEST -j $FLATPAK_BUILDER_N_JOBS"
-	    ],
+            "build-commands": [
+                "PREFIX=\"/app\" make",
+                "PREFIX=\"/app\" make install"
+            ],
 	    "sources": [
 		{
 		    "type": "git",
                     "url": "https://github.com/tree-sitter/tree-sitter.git",
-		    "tag": "v0.22.2"
+		    "tag": "v0.25.10"
 		}
 	    ]
 	},
@@ -77,7 +77,7 @@
                 {
                     "type": "git",
                     "url": "git://gcc.gnu.org/git/gcc.git",
-                    "tag": "releases/gcc-13.2.0"
+                    "tag": "releases/gcc-14.2.0"
                 }
             ],
 	    "cleanup": [

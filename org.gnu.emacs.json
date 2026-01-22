@@ -197,31 +197,19 @@
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document23.svg"
             ]
         },
-		{
-            "name": "podman-wrapper",
+	{
+            "name": "spawn-host",
             "buildsystem": "simple",
             "build-commands": [
-                "ln -s /app/bin/breakout podman"
+                "install -Dm 755 spawn-host /app/bin/podman",
+                "install -Dm 755 spawn-host /app/bin/toolbox"
             ],
-	    "modules": [
-		{
-		    "name": "breakout",
-		    "buildsystem": "simple",
-		    "build-commands": [
-			"make PREFIX=$FLATPAK_DEST -j $FLATPAK_BUILDER_N_JOBS",
-			"make install PREFIX=$FLATPAK_DEST -j $FLATPAK_BUILDER_N_JOBS",
-			"ln -s $FLATPAK_DEST/bin/breakout $FLATPAK_DEST/bin/toolbox",
-			"ln -s $FLATPAK_DEST/bin/breakout $FLATPAK_DEST/bin/podman"
-		    ],
-		    "sources": [
-			{
-			    "type": "git",
-			    "url": "https://github.com/fejfighter/breakout.git",
-			    "branch": "main"
-			}
-		    ]
-		}
-	    ]
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "spawn-host"
+                }
+            ]
 	}
     ],
     "cleanup": [

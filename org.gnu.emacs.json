@@ -180,20 +180,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ftp.gnu.org/gnu/emacs/emacs-30.2.tar.xz",
-                    "sha256": "b3f36f18a6dd2715713370166257de2fae01f9d38cfe878ced9b1e6ded5befd9"
-                },
-                {
-                    "type": "patch",
-                    "path": "appdata-launchable.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "appdata-id.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "desktop-rename.patch"
+                    "url": "https://ftp.gnu.org/gnu/emacs/emacs-31.1.tar.xz",
+                    "sha256": "1da5790d9580c81932b5bf700633114468da7b3412d69faa767daebf974f4586"
                 }
             ],
             "cleanup": [

@@ -191,16 +191,19 @@
             ]
         },
         {
-            "name": "spawn-host",
+            "name": "host-run",
             "buildsystem": "simple",
             "build-commands": [
-                "install -Dm 755 spawn-host /app/bin/podman",
-                "install -Dm 755 spawn-host /app/bin/toolbox"
+                "cc $CFLAGS -Wall -o host-run host-run.c $LDFLAGS -lsystemd",
+                "install -Dm 755 host-run $FLATPAK_DEST/bin/host-run",
+                "ln -s host-run $FLATPAK_DEST/bin/host-shell",
+                "ln -s host-run $FLATPAK_DEST/bin/podman",
+                "ln -s host-run $FLATPAK_DEST/bin/toolbox"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "path": "spawn-host"
+                    "path": "host-run.c"
                 }
             ]
         }
